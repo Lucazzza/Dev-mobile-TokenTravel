@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    tools:openDrawer="start"
+    android:fitsSystemWindows="false"
+    android:id="@+id/drawerLayout"
+    android:layout_height="match_parent"
+    tools:context=".Navigation_View">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            app:title="TokenTravel"
+            app:titleTextColor="@color/white"
+            android:background="@color/cinza"
+            android:elevation="3dp"
+            android:id="@+id/toolbar"
+            android:layout_height="wrap_content"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:id="@+id/frameLayout"
+            android:layout_height="match_parent"
+            >
+
+            <com.mapbox.mapboxsdk.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- Replace the existing Button with ImageView -->
+            <ImageView
+                android:id="@+id/btn_update_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_update_location"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/botao_pesquisar_rota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Button"
+            android:layout_gravity="center"
+            android:layout_marginTop="-75dp"
+            android:text="@string/pesquisar_rota" />
+
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_gravity="start"
+        app:menu="@menu/menu_bar"
+        android:id="@+id/nav"
+        app:headerLayout="@layout/header"
+        android:layout_height="match_parent"
+        />
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
